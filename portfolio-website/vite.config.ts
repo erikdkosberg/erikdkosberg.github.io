@@ -12,6 +12,7 @@ export default defineConfig({
     vueJsx(),
     vueDevTools(),
   ],
+  base: "/portfolio-website/",
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
