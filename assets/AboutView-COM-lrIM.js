@@ -1,0 +1,1 @@
+import{_ as t,c as o,a as n,o as r}from"./index-DdxHyBGd.js";const s={};function a(c,e){return r(),o("section",null,e[0]||(e[0]=[n("h1",null,"About Me",-1),n("p",null,"I'm a software engineer with 5+ years of experience in Vue.js, TypeScript, and Python.",-1)]))}const l=t(s,[["render",a]]);export{l as default};
