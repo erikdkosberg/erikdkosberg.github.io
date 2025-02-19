@@ -1,47 +1,29 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Header from './components/Header';
+import About from './components/About';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode((prevMode) => !prevMode);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`app-wrapper ${darkMode ? 'dark-mode' : ''}`}>
+      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <div className="container content">
+        <About />
+        <Projects />
+        <Contact />
+      </div>
+      <Footer />
     </div>
   );
 }
 
-
-function Profile() {
-  return (
-    <img
-      src="https://i.imgur.com/MK3eW3As.jpg"
-      alt="Katherine Johnson"
-    />
-  );
-}
-
-export default function Gallery() {
-  return (
-    <section>
-      <h1>Amazing scientists</h1>
-      <Profile />
-      <Profile />
-      <Profile />
-    </section>
-
-    
-  );
-}
-//export default App;
+export default App;
